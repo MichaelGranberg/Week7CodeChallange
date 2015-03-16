@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sp6MichaelModelCompForms.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CompContactForms">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="emailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="phoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="companyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="projdescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="comment" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <Function Name="CreateNewScore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="game" Type="nvarchar" Mode="In" />
+    <Parameter Name="score" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteBloodBankByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="bloodbankid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteDonorByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="donorid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletePatientByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="patientid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteScore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="highscoreid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetBloodBankByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="bloodbankid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDonorByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="donorid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDonorByPatientID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="patientid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetPatientByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="patientid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetScoreByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="highscoreid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertBloodBank" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="bankaddress" Type="nvarchar" Mode="In" />
+    <Parameter Name="bankcontactnumber" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="InsertDonor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="bloodtype" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="InsertPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="bloodtype" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ModifyName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="gamename" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateBloodBank" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="bloodbankid" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="bankaddress" Type="nvarchar" Mode="In" />
+    <Parameter Name="bankcontactnumber" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateDonor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="donorid" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="bloodtype" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdatePatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="patientid" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="bloodtype" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateScore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sp6Michael">
+    <Parameter Name="highscoreid" Type="int" Mode="In" />
+    <Parameter Name="newscore" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="sp6MichaelModelCompFormsStoreContainer">
+    <EntitySet Name="CompContactForms" EntityType="Self.CompContactForms" Schema="sp6Michael" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

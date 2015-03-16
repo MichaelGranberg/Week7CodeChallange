@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sp6MichaelModelCompForms" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CompContactForm">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="emailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="companyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="projdescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="sp6MichaelEntiesCompForm" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CompContactForms" EntityType="Self.CompContactForm" />
+    <FunctionImport Name="CreateNewScore">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="game" Mode="In" Type="String" />
+      <Parameter Name="score" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteBloodBankByID">
+      <Parameter Name="bloodbankid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteDonorByID">
+      <Parameter Name="donorid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeletePatientByID">
+      <Parameter Name="patientid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteScore">
+      <Parameter Name="highscoreid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBloodBankByID" ReturnType="Collection(sp6MichaelModelCompForms.GetBloodBankByID_Result)">
+      <Parameter Name="bloodbankid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetDonorByID" ReturnType="Collection(sp6MichaelModelCompForms.GetDonorByID_Result)">
+      <Parameter Name="donorid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetDonorByPatientID" ReturnType="Collection(String)">
+      <Parameter Name="patientid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetPatientByID" ReturnType="Collection(sp6MichaelModelCompForms.GetPatientByID_Result)">
+      <Parameter Name="patientid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetScoreByID">
+      <Parameter Name="highscoreid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InsertBloodBank">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="bankaddress" Mode="In" Type="String" />
+      <Parameter Name="bankcontactnumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertDonor">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="bloodtype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertPatient">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="bloodtype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ModifyName">
+      <Parameter Name="gamename" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateBloodBank">
+      <Parameter Name="bloodbankid" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="bankaddress" Mode="In" Type="String" />
+      <Parameter Name="bankcontactnumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateDonor">
+      <Parameter Name="donorid" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="bloodtype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdatePatient">
+      <Parameter Name="patientid" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="bloodtype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateScore">
+      <Parameter Name="highscoreid" Mode="In" Type="Int32" />
+      <Parameter Name="newscore" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetBloodBankByID_Result">
+    <Property Type="String" Name="BloodBankName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BloodBankAddress" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BloodBankContactNumber" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="GetDonorByID_Result">
+    <Property Type="String" Name="DonorName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="DonorBloodType" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="GetPatientByID_Result">
+    <Property Type="String" Name="PatientName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PatientBloodType" Nullable="true" MaxLength="200" />
+  </ComplexType>
+</Schema>

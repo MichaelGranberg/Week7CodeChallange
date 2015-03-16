@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sp6MichaelModelCompFormsStoreContainer" CdmEntityContainer="sp6MichaelEntiesCompForm">
+    <EntitySetMapping Name="CompContactForms">
+      <EntityTypeMapping TypeName="sp6MichaelModelCompForms.CompContactForm">
+        <MappingFragment StoreEntitySet="CompContactForms">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="emailID" ColumnName="emailID" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="projdescription" ColumnName="projdescription" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CreateNewScore" FunctionName="sp6MichaelModelCompForms.Store.CreateNewScore" />
+    <FunctionImportMapping FunctionImportName="DeleteBloodBankByID" FunctionName="sp6MichaelModelCompForms.Store.DeleteBloodBankByID" />
+    <FunctionImportMapping FunctionImportName="DeleteDonorByID" FunctionName="sp6MichaelModelCompForms.Store.DeleteDonorByID" />
+    <FunctionImportMapping FunctionImportName="DeletePatientByID" FunctionName="sp6MichaelModelCompForms.Store.DeletePatientByID" />
+    <FunctionImportMapping FunctionImportName="DeleteScore" FunctionName="sp6MichaelModelCompForms.Store.DeleteScore" />
+    <FunctionImportMapping FunctionImportName="GetBloodBankByID" FunctionName="sp6MichaelModelCompForms.Store.GetBloodBankByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sp6MichaelModelCompForms.GetBloodBankByID_Result">
+          <ScalarProperty Name="BloodBankName" ColumnName="BloodBankName" />
+          <ScalarProperty Name="BloodBankAddress" ColumnName="BloodBankAddress" />
+          <ScalarProperty Name="BloodBankContactNumber" ColumnName="BloodBankContactNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDonorByID" FunctionName="sp6MichaelModelCompForms.Store.GetDonorByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sp6MichaelModelCompForms.GetDonorByID_Result">
+          <ScalarProperty Name="DonorName" ColumnName="DonorName" />
+          <ScalarProperty Name="DonorBloodType" ColumnName="DonorBloodType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDonorByPatientID" FunctionName="sp6MichaelModelCompForms.Store.GetDonorByPatientID" />
+    <FunctionImportMapping FunctionImportName="GetPatientByID" FunctionName="sp6MichaelModelCompForms.Store.GetPatientByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sp6MichaelModelCompForms.GetPatientByID_Result">
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="PatientBloodType" ColumnName="PatientBloodType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetScoreByID" FunctionName="sp6MichaelModelCompForms.Store.GetScoreByID" />
+    <FunctionImportMapping FunctionImportName="InsertBloodBank" FunctionName="sp6MichaelModelCompForms.Store.InsertBloodBank" />
+    <FunctionImportMapping FunctionImportName="InsertDonor" FunctionName="sp6MichaelModelCompForms.Store.InsertDonor" />
+    <FunctionImportMapping FunctionImportName="InsertPatient" FunctionName="sp6MichaelModelCompForms.Store.InsertPatient" />
+    <FunctionImportMapping FunctionImportName="ModifyName" FunctionName="sp6MichaelModelCompForms.Store.ModifyName" />
+    <FunctionImportMapping FunctionImportName="UpdateBloodBank" FunctionName="sp6MichaelModelCompForms.Store.UpdateBloodBank" />
+    <FunctionImportMapping FunctionImportName="UpdateDonor" FunctionName="sp6MichaelModelCompForms.Store.UpdateDonor" />
+    <FunctionImportMapping FunctionImportName="UpdatePatient" FunctionName="sp6MichaelModelCompForms.Store.UpdatePatient" />
+    <FunctionImportMapping FunctionImportName="UpdateScore" FunctionName="sp6MichaelModelCompForms.Store.UpdateScore" />
+  </EntityContainerMapping>
+</Mapping>
