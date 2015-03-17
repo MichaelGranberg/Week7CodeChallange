@@ -4,62 +4,63 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET  AJAX  Application</title>
-           <!-- jQuery import -->
-        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-          <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-         <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-         <!-- Main JavaScript-->
-       <script src="~/Scripts/Main.js"></script>
-         <!--Main Css-->
-        <link href="~/Content/Site.css" rel="stylesheet" />
-        </head>
+    <!-- jQuery import -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- Main JavaScript-->
+    <script src="~/Scripts/Main.js"></script>
+    <!--Main Css-->
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
 <body>
     <header class="header">
-       
-         
-    <div class="container">
-        <nav class="navbar">
-            <div class="row">                
-                <img class="navbar-left" src="http://cdn-img.easylogo.cn/gif/51/51700.gif" height="150" width="200" />
-                <div class="navbar-right" style="line-height:100px">
-                
-                <ul class="navbar list-inline">
-                    <li><a href="@Url.Action("Index", "Home")" class="ajax-link">Home</a></li>
-                    <li><a href="@Url.Action("Index", "About")" class="ajax-link">About</a></li>
-                    <li><a href="@Url.Action("Index", "Work")"  class="ajax-link">Work</a></li>
-                    <li><a href="@Url.Action("Index", "Careers")" class="ajax-link">Careers</a></li>
-                    <li><a href="@Url.Action("Index", "CompContactForms")" class="ajax-link">Contact</a></li>
-                </ul>
+
+
+        <div class="container">
+            <nav class="navbar">
+                <div class="row">
+                    <img class="navbar-left" src="http://cdn-img.easylogo.cn/gif/51/51700.gif" height="150" width="200" />
+                    <div class="navbar-right" style="line-height:100px">
+
+                        <ul class="navbar list-inline">
+                            <li data-url="@Url.Action("Index", "Home")" class="ajax-link">Home</a></li>
+                            <li data-url="@Url.Action("Index", "About")" class="ajax-link">About</></li>
+                            <li data-url="@Url.Action("Index", "Work")" class="ajax-link">Work</></li>
+                            <li data-url="@Url.Action("Index", "Careers")" class="ajax-link">Careers</></li>
+                            <li data-url="@Url.Action("Index", "CompContactForms")" class="ajax-link">Contact</></li>
+                        </ul>
                     </div>
-</div>
-</nav>
-    </div>
-        </header>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-    <div id="mainBody" class="container">
-                @RenderBody()
+    <div id="#body-content" class="container content">
+        
+        @RenderBody()
        
     </div>
-        <footer class="footer">
-              <div class="container">
-                   <div class="row" >
-                        <div class="col-md-8 column" style="align-content:flex-start">
-                                     Copyright 2014 Fake Studio
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 column" style="align-content:flex-start">
+                    Copyright 2014 Fake Studio
 
-                         </div>
-                                   <div class="navbar-right" style="display:inline-block">
-                                         <ul class="list-inline">
-                                             <li><a href="@Url.Action("Index", "Home")"  class="ajax-link">Home</a></li>
-                                             <li><a href="@Url.Action("Index", "About")" class="ajax-link">About</a></li>
-                                             <li><a href="@Url.Action("Index", "Work")"  class="ajax-link">Work</a></li>
-                                             <li><a href="@Url.Action("Index", "Careers")" class="ajax-link">Careers</a></li>
-                                             <li><a href="@Url.Action("Index", "CompContactForms")" class="ajax-link">Contact</a></li>
-                                         </ul>
-                                    </div>
-                          </div>
-                   </div>
-           </footer>
-    </body>
+                </div>
+                <div class="navbar-right" style="display:inline-block">
+                    <ul class="list-inline">
+                        <li data-url="@Url.Action("Index", "Home")" class="ajax-link">Home</></li>
+                        <li data-url="@Url.Action("Index", "About")" class="ajax-link">About</></li>
+                        <li data-url="@Url.Action("Index", "Work")" class="ajax-link">Work</></li>
+                        <li data-url="@Url.Action("Index", "Careers")" class="ajax-link">Careers</a></li>
+                        <li data-url="@Url.Action("Index", "CompContactForms")" class="ajax-link">Contact</></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>

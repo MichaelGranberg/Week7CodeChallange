@@ -1,13 +1,19 @@
 ﻿@model Week7CodeChallenge.Models.CompContactForm
+@{
+    ViewBag.Title = "Company Contact Form";
+    if (!Request.IsAjaxRequest())
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
 
   
-
               @using (Html.BeginForm())
         {
                   @Html.AntiForgeryToken()
-                  <div class="ajax-form-content">
-                      <form data-posturl="@Url.Action("Contact", "Contact")" method="post" class="ajax-form">
-
+                  <div class="contact-content">
+                      <form data-posturl="@Url.Action("Index", "Contact")" method="post" class="ajax-contact">
+                         
                           <div class="form-horizontal">
                               <h4>CompContactForm</h4>
                               <hr />

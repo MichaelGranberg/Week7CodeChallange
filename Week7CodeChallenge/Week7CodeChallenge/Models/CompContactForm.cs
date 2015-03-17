@@ -11,16 +11,25 @@ namespace Week7CodeChallenge.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
-    public partial class CompContactForm
+   
+        public partial class CompContactForm
     {
         public int ContactID { get; set; }
+        [Required, Display(Name = "First Name")]
         public string firstName { get; set; }
+        [Required, Display(Name = "Last Name")]
         public string lastName { get; set; }
+        [Required, Display(Name = "Email ID")]
         public string emailID { get; set; }
+        [Required, Display(Name = "Phone Number")]
         public string phoneNumber { get; set; }
+        [Required, Display(Name = "Company Name")]
         public string companyName { get; set; }
+        [Required, Display(Name = "Project Description")]
         public string projdescription { get; set; }
+        [Required, Display(Name = "Comments")]
         public string comment { get; set; }
     }
 }
